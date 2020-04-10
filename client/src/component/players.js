@@ -5,9 +5,13 @@ function Players(props) {
 //   const [darkMode, setDarkMode] = useDarkMode("isDark");
   return (
     <div className="info">
-        <h2>{props.info.name}</h2>
-        <p>Country: {props.info.country}</p>
-        <p>Searches: {props.info.searches}</p>
+        {/* <h2 id="name" data-testid="name">{props.info.name}</h2> */}
+        <p id="country" data-testid="country">Country: 
+        {/* {props.info.country} */}
+        </p>
+        <p id="searches" data-testid="searches">Searches: 
+        {/* {props.info.searches} */}
+        </p>
 
     </div>
   );
