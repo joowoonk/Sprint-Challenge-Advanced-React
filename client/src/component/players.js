@@ -1,7 +1,7 @@
 import React from "react";
 // import { useDarkMode } from "../hooks/useDarkMode";
 function Players(props) {
-//   console.log(props);
+  // console.log(props);
 //   const [darkMode, setDarkMode] = useDarkMode("isDark");
   return (
     <div className="info">
