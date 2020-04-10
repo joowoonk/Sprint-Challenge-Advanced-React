@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from "react";
+// import ReactDOM from "react-dom";
+// import axios from "axios";
+// import Fetch from './components/Fetch'
+
+import useFetch from "./hooks/useFetch"
+import Players from "./component/players"
 import './App.css';
+import Search from "./component/Search"
 
 function App() {
+  const res = useFetch("http://localhost:5000/api/players", {});
+  console.log("earaewr",res)
+  if (!res.response) {
+    return <div>Loading...</div>
+  }
+  const array = res.response;
+  console.log(array)
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Women's World Cup</h1>
+      <Search array={array}/>
+      {array.map(res => {
+        return( <Players info={res}key={res.id}/>)
+      })}
     </div>
   );
 }
