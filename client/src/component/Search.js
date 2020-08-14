@@ -26,7 +26,7 @@ const Search = (props) => {
     const handleChange = event => {
         setSearchTerm(event.target.value);
     };
-    
+
     return(
         <div>
             <form className="form">
@@ -45,7 +45,7 @@ const Search = (props) => {
         />
       </form>
       {searchResults.map(res => {
-        return( <Players info={res}key={res.id}/>)
+        return( <Players info={res} key={res.id}/>)
       })}
         </div>
     )
